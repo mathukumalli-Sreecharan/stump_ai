@@ -1,0 +1,150 @@
+{
+    "task_id":  "TASK_42D73854D896",
+    "task_version":  1,
+    "category":  "python_coding",
+    "difficulty":  "medium",
+    "title":  "String Frequency with Tie-Breaking",
+    "problem_statement":  "Count the frequency of each character in a string, breaking ties by character order (ascending order of ASCII values).",
+    "input_specification":  "A string of characters",
+    "output_specification":  "A dictionary mapping each character to its frequency count",
+    "constraints":  [
+                        "The string length is between 0 and 1000",
+                        "The string contains only ASCII characters"
+                    ],
+    "expected_behavior":  "For each character in the string, count how many times it appears. If two characters have the same frequency, the character with the lower ASCII value is considered first.",
+    "function_signature":  "def solve(s: str) -\u003e dict[str, int]:",
+    "edge_case_requirements":  [
+                                   "empty string",
+                                   "single character"
+                               ],
+    "time_complexity":  "O(n)",
+    "metadata":  {
+                     "archetype":  "string_frequency",
+                     "generation_type":  "standard"
+                 },
+    "generation_seed":  null,
+    "generation_model":  "qwen3:4b",
+    "generated_at":  "2026-11-02T00:56:49.421445Z",
+    "golden_solution":  "def solve(s: str) -\u003e dict[str, int]:\n    freq = {}\n    for char in s:\n        freq[char] = freq.get(char, 0) + 1\n    return freq",
+    "tests":  [
+                  {
+                      "test_id":  "TC001",
+                      "input":  {
+                                    "s":  "hello"
+                                },
+                      "expected_output":  {
+                                              "h":  1,
+                                              "e":  1,
+                                              "l":  2,
+                                              "o":  1
+                                          },
+                      "category":  "normal",
+                      "description":  "Checks a normal input",
+                      "mandatory":  true,
+                      "visibility":  "public"
+                  },
+                  {
+                      "test_id":  "TC002",
+                      "input":  {
+                                    "s":  ""
+                                },
+                      "expected_output":  {
+
+                                          },
+                      "category":  "edge",
+                      "description":  "Checks empty string",
+                      "mandatory":  true,
+                      "visibility":  "public"
+                  },
+                  {
+                      "test_id":  "TC003",
+                      "input":  {
+                                    "s":  "a"
+                                },
+                      "expected_output":  {
+                                              "a":  1
+                                          },
+                      "category":  "edge",
+                      "description":  "Checks single character",
+                      "mandatory":  true,
+                      "visibility":  "hidden"
+                  },
+                  {
+                      "test_id":  "TC004",
+                      "input":  {
+                                    "s":  "aaabbb"
+                                },
+                      "expected_output":  {
+                                              "a":  3,
+                                              "b":  3
+                                          },
+                      "category":  "normal",
+                      "description":  "Checks duplicate characters",
+                      "mandatory":  true,
+                      "visibility":  "public"
+                  },
+                  {
+                      "test_id":  "TC005",
+                      "input":  {
+                                    "s":  "abc"
+                                },
+                      "expected_output":  {
+                                              "a":  1,
+                                              "b":  1,
+                                              "c":  1
+                                          },
+                      "category":  "normal",
+                      "description":  "Checks unique characters",
+                      "mandatory":  true,
+                      "visibility":  "hidden"
+                  },
+                  {
+                      "test_id":  "TC006",
+                      "input":  {
+                                    "s":  "aabbcc"
+                                },
+                      "expected_output":  {
+                                              "a":  2,
+                                              "b":  2,
+                                              "c":  2
+                                          },
+                      "category":  "normal",
+                      "description":  "Checks duplicate characters with tie-breaking",
+                      "mandatory":  true,
+                      "visibility":  "public"
+                  },
+                  {
+                      "test_id":  "TC007",
+                      "input":  {
+                                    "s":  "aabbccddeeff"
+                                },
+                      "expected_output":  {
+                                              "a":  2,
+                                              "b":  2,
+                                              "c":  2,
+                                              "d":  2,
+                                              "e":  2,
+                                              "f":  2
+                                          },
+                      "category":  "normal",
+                      "description":  "Checks multiple duplicate characters",
+                      "mandatory":  true,
+                      "visibility":  "hidden"
+                  },
+                  {
+                      "test_id":  "TC008",
+                      "input":  {
+                                    "s":  "a"
+                                },
+                      "expected_output":  {
+                                              "a":  1
+                                          },
+                      "category":  "edge",
+                      "description":  "Checks single character again",
+                      "mandatory":  true,
+                      "visibility":  "public"
+                  }
+              ],
+    "validation_status":  "passed",
+    "quality_score":  91
+}

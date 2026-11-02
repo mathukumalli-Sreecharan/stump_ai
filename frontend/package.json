@@ -1,0 +1,1 @@
+{"name":"modelstump-dashboard","version":"0.1.0","private":true,"type":"module","scripts":{"dev":"vite","build":"tsc --noEmit && vite build"},"dependencies":{"@vitejs/plugin-react":"latest","react":"latest","react-dom":"latest","recharts":"latest","typescript":"latest","vite":"latest"},"devDependencies":{"@types/react":"^19.3.0","@types/react-dom":"^19.3.0"}}
